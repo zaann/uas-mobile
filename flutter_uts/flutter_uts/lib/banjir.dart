@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_uts/banjir/pascabanjir.dart';
+import 'package:flutter_uts/banjir/saatbanjir.dart';
+import 'package:flutter_uts/banjir/sebelumbanjir.dart';
 
 class BanjirPage extends StatefulWidget {
   const BanjirPage({Key? key}) : super(key: key);
@@ -11,9 +14,15 @@ class _BanjirPageState extends State<BanjirPage> {
   int _selectedIndex = 0;
 
   static const List<String> _categories = [
-    '     Sebelum Banjir     ',
+    '       Sebelum Banjir      ',
     '     Saat Banjir     ',
-    '     Pasca Banjir     ',
+    '      Pasca Banjir     ',
+  ];
+
+  List<Widget> _pages = [
+    SebelumBanjirPage(),
+    SaatBanjirPage(),
+    PascaBanjirPage(),
   ];
 
   @override
@@ -30,11 +39,10 @@ class _BanjirPageState extends State<BanjirPage> {
         ),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
+        elevation: 0,
       ),
       body: Padding(
-        padding: EdgeInsets.only(
-          top: 16.0,
-        ),
+        padding: EdgeInsets.only(top: 16.0),
         child: Column(
           children: [
             SizedBox(
@@ -77,14 +85,18 @@ class _BanjirPageState extends State<BanjirPage> {
             ),
             Expanded(
               child: Container(
+                margin: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
                 child: Center(
-                  child: Text(
-                    _categories[_selectedIndex],
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  child: _selectedIndex == 0
+                      ? SebelumBanjirPage()
+                      : _selectedIndex == 1
+                          ? SaatBanjirPage()
+                          : PascaBanjirPage(),
                 ),
               ),
             ),

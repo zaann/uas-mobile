@@ -19,6 +19,7 @@ class ResikoBencanaPage extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
+        elevation: 0,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

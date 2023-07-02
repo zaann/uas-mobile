@@ -30,6 +30,7 @@ class _PemberitahuanPageState extends State<PemberitahuanPage> {
         ),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
+        elevation: 0,
       ),
       body: Padding(
         padding: EdgeInsets.only(

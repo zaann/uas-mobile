@@ -30,6 +30,7 @@ class _GempaPageState extends State<GempaPage> {
         ),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
+        elevation: 0,
       ),
       body: Padding(
         padding: EdgeInsets.only(
